@@ -34,9 +34,9 @@ Create public class **PersonsDatabase** in package **problem2** that has:
 
 2. Public method **addPerson** that gets an object of class **Person**  as an arguments and adds it to the list.
 
-3. Public method **saveInFile** that writes (serializes) all persons from the group into the file whose name is provided as an input parameter. If an error occurs when reading content from the keyboard, the method should throw an appropriate exception.
+3. Public method **saveInFile** that writes (serializes) all persons from the group into the file whose name is provided as an input parameter. If an error occurs when saving the file, the method should throw an appropriate exception.
 
-4. Public method **readFromFile** that reads (deserializes) all persons from the file whose name is provided as an input parameter of the method, fills the list **persons** , and returns it as the return value of the method. Before the read, it is necessary to empty **persons**. If an error occurs when reading content from the keyboard, the method should throw an appropriate exception.
+4. Public method **readFromFile** that reads (deserializes) all persons from the file whose name is provided as an input parameter of the method, fills the list **persons** , and returns it as the return value of the method. Before the read, it is necessary to empty **persons**. If an error occurs when reading the file, the method should throw an appropriate exception.
 
 5. Public method **returnPersons** that returns the list of persons that are currently in the database.
 
