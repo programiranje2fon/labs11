@@ -24,7 +24,7 @@ public class TextFilesCheckTest {
 	@Test
 	public void method_readAndReturnText() {
 		try {
-			String text = TextFiles.readReturnText("text.txt");
+			String text = TextFiles.readAndReturnText("text.txt");
 			String expectedText ="This is some text in the file. This text should be red and written on the screen. ";
 			assertEquals("Expected text has not been read.", expectedText, text);
 		} catch (IOException e) {
@@ -36,7 +36,7 @@ public class TextFilesCheckTest {
 	public void method_writeTest() {
 		try {
 			TextFiles.returnText("text2.txt");
-			String text = TextFiles.readReturnText("text2.txt");
+			String text = TextFiles.readAndReturnText("text2.txt");
 			String expectedText = "It's a nice day today. Maybe the temperature is going to be above zero. ";
 			assertEquals("The expected text has not been written.", expectedText, text);			
 		} catch (IOException e) {

@@ -6,7 +6,7 @@ import java.io.*;
 
 public class TextFiles {
 	
-	public static String readReturnText(String fileName) throws IOException {
+	public static String readAndReturnText(String fileName) throws IOException {
 			BufferedReader in = new BufferedReader(new FileReader(fileName));
 			boolean end = false;
 			String s = "";
