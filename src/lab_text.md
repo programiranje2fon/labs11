@@ -16,7 +16,7 @@ Create public class **TextFiles** in package **problem1** that has:
 ##Problem 2
 *(worked through by the TA with students' help)*
 
-Create public class **Person** in package **problem2** that can be serializedh and has:
+Create public class **Person** in package **problem2** that can be serialized and has:
 
 1. Private attributes name and surname.
 
