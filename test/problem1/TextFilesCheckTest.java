@@ -3,6 +3,7 @@ package problem1;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.junit.After;
@@ -24,9 +25,12 @@ public class TextFilesCheckTest {
 	@Test
 	public void method_readAndReturnText() {
 		try {
+			TextFiles.writeText("text.txt");
 			String text = TextFiles.readAndReturnText("text.txt");
-			String expectedText ="This is some text in the file. This text should be red and written on the screen. ";
+			String expectedText = "It's a nice day today. Maybe the temperature is going to be above zero. ";
 			assertEquals("Expected text has not been read.", expectedText, text);
+			File file = new File("text.txt");
+			file.delete();
 		} catch (IOException e) {
 			fail("File read error. Check whether the file with that name exists.");
 		}		
@@ -35,7 +39,7 @@ public class TextFilesCheckTest {
 	@Test
 	public void method_writeTest() {
 		try {
-			TextFiles.returnText("text2.txt");
+			TextFiles.writeText("text2.txt");
 			String text = TextFiles.readAndReturnText("text2.txt");
 			String expectedText = "It's a nice day today. Maybe the temperature is going to be above zero. ";
 			assertEquals("The expected text has not been written.", expectedText, text);			

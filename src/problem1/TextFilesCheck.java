@@ -15,7 +15,7 @@ public class TextFilesCheck {
 
 			
 			try {
-				TextFiles.returnText("text2.txt");
+				TextFiles.writeText("text2.txt");
 			} catch (IOException e) {
 				System.out.println("Writing error!");
 			}

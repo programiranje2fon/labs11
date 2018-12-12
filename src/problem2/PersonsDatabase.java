@@ -51,5 +51,17 @@ public class PersonsDatabase {
 		return persons;
 	}
 
+	public void findPersons(String name, String surname) {
+		try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("results.ser"))) {
+			for(Person person : persons) {
+				if (person.getName().equals(name) || person.getSurname().equals(surname))
+					out.writeObject(person);
+			}
+			out.flush();			
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+
+	}
 
 }

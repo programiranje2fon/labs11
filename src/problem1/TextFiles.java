@@ -22,7 +22,7 @@ public class TextFiles {
 			return s;
 	}
 
-	public static void returnText(String fileName) throws IOException {
+	public static void writeText(String fileName) throws IOException {
 			PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(fileName)));
 			out.println("It's a nice day today.");
 			out.println("Maybe the temperature is going to be above zero.");

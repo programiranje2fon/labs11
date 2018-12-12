@@ -59,6 +59,8 @@ public class PersonsDatabaseTest {
 	public void method_readFromFile() {
 		Person o1 = new Person("Pera", "Peric");
 		Person o2 = new Person("Mara", "Maric");		
+		database.addPerson(o1);
+		database.addPerson(o2);
 		try {
 			List<Person> ucitaneOsobe =  database.readFromFile("testFile.out");
 			boolean isEqual = ucitaneOsobe.get(0).equals(o1) && ucitaneOsobe.get(1).equals(o2);
@@ -80,8 +82,32 @@ public class PersonsDatabaseTest {
 		boolean isEqual = persons.get(0).equals(o1) && persons.get(1).equals(o2);
 		assertTrue("Method does not return the expected list", isEqual);		
 	}
-
 	
+	@Test
+	public void metoda_pronadjiOsobe() {
+		Person o1 = new Person("Pera", "Peric");
+		Person o2 = new Person("Mara", "Maric");
+		Person o3 = new Person("Dragan", "Djuric");
+		Person o4 = new Person("Bojan", "Tomic");
+		database.addPerson(o1);
+		database.addPerson(o2);
+		database.addPerson(o3);
+		database.addPerson(o4);
+		
+		database.findPersons("Pera", "Tomic");
+		
+		PersonsDatabase database2 = new PersonsDatabase();
+		try {
+			database2.readFromFile("results.ser");
+			List<Person> persons2 =  database2.returnPersons();
+			
+			boolean areEqual = persons2.get(0).equals(o1) && persons2.get(1).equals(o4) && persons2.size() == 2;
+			assertTrue("Method does not return the expected list of persons", areEqual);				
+		} catch (IOException e) {
+			fail("Error while reading persons from the file!");
+		}	
+	}	
+
 	private List<Person> readPersonsFromFile(String imeFajla) throws IOException {
 		List<Person> persons = new ArrayList<>();
 		
