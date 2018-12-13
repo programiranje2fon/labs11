@@ -8,7 +8,7 @@ Create public class **TextFiles** in package **problem1** that has:
 
 1. Public static method **readAndReturnText** that reads text from the text file whose name is passed to the method as its input parameter. If an error occurs when reading content from the file, the method should throw an appropriate exception.
 
-2. Public static method **writeText** that writes two strings, "It's a nice day today." and "Maybe the temperature is going to be above zero.", in the file whose name is provided as the method's parameter. Each string should be in a separate row. If an error occurs when reading content from the file, the method should throw an appropriate exception.
+2. Public static method **writeText** that writes two strings, "It's a nice day today." and "Maybe the temperature is going to be above zero.", in the file whose name is provided as the method's parameter. Each string should be in a separate row. If an error occurs when writing content to the file, the method should throw an appropriate exception.
 
 Create public class **TextFilesCheck** in package **problem1**, which checks the methods from the **TextualFiles** class, namely reading from file **text.txt** and writing to file **text2.txt**.
 
