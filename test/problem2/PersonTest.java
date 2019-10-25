@@ -19,11 +19,11 @@ public class PersonTest {
 	}
 
 	@Test
-	public void constructor_testPerson() {
+	public void constructor_Person() {
 		Person o = new Person("Pera", "Peric");
 		String name = o.getName();
 		String surname = o.getSurname();
-		
+
 		assertTrue("Name not initialized well. Check the constructor and the getter.", name.equals("Pera"));
 		assertTrue("Surname not initialized well. Check the constructor and the getter.", surname.equals("Peric"));
 	}
@@ -32,16 +32,16 @@ public class PersonTest {
 	public void method_getName() {
 		Person o = new Person("Pera", "Peric");
 		String name = o.getName();
-		
-		assertTrue("Name not initialized well. Check the constructor and the getter.", name.equals("Pera"));	
+
+		assertTrue("Name not initialized well. Check the constructor and the getter.", name.equals("Pera"));
 	}
 
 	@Test
 	public void method_getSurname() {
 		Person o = new Person("Pera", "Peric");
 		String surname = o.getSurname();
-		
-		assertTrue("Surname not initialized well. Check the constructor and the getter.", surname.equals("Peric"));		
+
+		assertTrue("Surname not initialized well. Check the constructor and the getter.", surname.equals("Peric"));
 	}
 
 	@Test
@@ -49,18 +49,17 @@ public class PersonTest {
 		Person o1 = new Person("Pera", "Peric");
 		Person o2 = new Person("Pera", "Peric");
 		Person o3 = new Person("Luka", "Lukic");
-		
+
 		assertTrue("Method equals does not compare objects well", o1.equals(o2));
 		assertFalse("Method equals does not compare objects well", o1.equals(o3));
-		
 	}
-	
-	
+
 	@Test
 	public void method_toString() {
 		Person o = new Person("Pera", "Peric");
-		
-		assertTrue("Method toString does not return the expected value", o.toString().equals("Person [name=Pera, surname=Peric]"));
+
+		assertTrue("Method toString does not return the expected value",
+				o.toString().equals("Person [name=Pera, surname=Peric]"));
 	}
 
 }

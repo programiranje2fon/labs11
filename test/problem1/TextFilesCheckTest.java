@@ -29,6 +29,8 @@ public class TextFilesCheckTest {
 			String text = TextFiles.readAndReturnText("text.txt");
 			String expectedText = "It's a nice day today. Maybe the temperature is going to be above zero. ";
 			assertEquals("Expected text has not been read.", expectedText, text);
+			
+			// delete the file
 			File file = new File("text.txt");
 			file.delete();
 		} catch (IOException e) {
@@ -37,12 +39,16 @@ public class TextFilesCheckTest {
 	}
 
 	@Test
-	public void method_writeTest() {
+	public void method_writeText() {
 		try {
 			TextFiles.writeText("text2.txt");
 			String text = TextFiles.readAndReturnText("text2.txt");
 			String expectedText = "It's a nice day today. Maybe the temperature is going to be above zero. ";
-			assertEquals("The expected text has not been written.", expectedText, text);			
+			assertEquals("The expected text has not been written.", expectedText, text);
+			
+			// delete the file
+			File file = new File("text2.txt");
+			file.delete();
 		} catch (IOException e) {
 			fail("File write error. Check whether the file with that name exists.");
 		}
